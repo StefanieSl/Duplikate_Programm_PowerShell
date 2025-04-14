@@ -81,7 +81,8 @@ foreach ($entry in $sizeMap.GetEnumerator() | Sort-Object name -Descending) {
         
         # Dateien mit gleichen Hashwerten gruppieren
         foreach($file in $files) {
-            if(-not $hashMap.ContainsKey((Get-FileHash -Algorithm MD5 -Path $file).Hash)) { #To Do: Funktion in Variable speichern (Get... $file)
+        # $hash = 
+            if(-not $hashMap.ContainsKey((Get-FileHash -Algorithm MD5 -Path $file).Hash)) { #To Do: Funktion in Variable speichern (Get... $file) in $hash
                 $hashMap[(Get-FileHash -Algorithm MD5 -Path $file)] = @()
             }
             
